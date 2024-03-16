@@ -1,0 +1,18 @@
+.accordion {
+  display: flex;
+  align-items: center;
+
+  background-color: transparent;
+  background-repeat: no-repeat;
+  outline: none;
+  border: none;
+  cursor: pointer;
+
+  &__text {
+    font-weight: 600;
+    line-height: 150%;
+    margin-left: 17px;
+    letter-spacing: -0.01em;
+    color: #1b1c21;
+  }
+}
