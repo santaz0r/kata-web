@@ -24,18 +24,26 @@ html {
 }
 
 .page {
-  background-color: $main-color;
   display: flex;
   flex-direction: column;
   min-height: 100%;
-
+  color: $text-color;
   position: relative;
+  background-color: $bg-main-color;
 }
 
-// .container {
-//   width: 90%;
-//   margin: auto;
-// }
+.container {
+  margin: 0 auto;
+  max-width: 90%;
+
+  @media (min-width: 768px) {
+    max-width: 93.75%;
+  }
+
+  @media (min-width: 1120px) {
+    max-width: 95%;
+  }
+}
 
 .main {
   flex: 1 0 auto;

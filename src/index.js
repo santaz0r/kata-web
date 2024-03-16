@@ -1,7 +1,7 @@
 import footer from "./components/Footer";
+import header from "./components/Header";
 import "./index.scss";
 
 const page = document.querySelector(".page");
 
-page.append(footer);
-console.log("works!");
+page.prepend(header);

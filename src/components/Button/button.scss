@@ -1,0 +1,35 @@
+.button {
+  display: flex;
+  align-items: center;
+  padding: 0;
+  outline: none;
+  border: none;
+  cursor: pointer;
+
+  background-color: transparent;
+  background-repeat: no-repeat;
+  border-radius: 20px;
+  transition: filter 0.1s linear;
+  &:hover {
+    filter: drop-shadow(0 0 7px $button-color);
+  }
+  &__img {
+    width: 40px;
+    height: 40px;
+    background-color: $button-color;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  span {
+    @media (min-width: 1120px) {
+      display: inline-block;
+      margin-right: 8px;
+      font-size: 16px;
+      font-weight: 500;
+    }
+    display: none;
+    order: -1;
+  }
+}
