@@ -1,6 +1,6 @@
 .navigation {
+  @include flex();
   padding-bottom: 5px;
-  display: flex;
   list-style-type: none;
   overflow: auto;
   gap: 15px;

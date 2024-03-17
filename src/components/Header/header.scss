@@ -25,13 +25,11 @@
   }
 
   &__wrapper {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+    @include flex($justify: space-between, $align: center);
   }
 
   &__item {
-    display: flex;
+    @include flex();
     margin-right: 16px;
 
     &:last-child {
@@ -74,7 +72,6 @@
 }
 
 .buttons__wrapper {
-  display: flex;
   display: none;
   @media (min-width: 768px) {
     display: flex;

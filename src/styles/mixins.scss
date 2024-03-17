@@ -1,8 +1,18 @@
-// @mixin flex($justify: unset, $align: unset) {
-//     display: flex;
-//     justify-content: $justify;
-//     align-items: $align;
-//   }
+@mixin flex($justify: unset, $align: unset) {
+  display: flex;
+  justify-content: $justify;
+  align-items: $align;
+}
+
+@mixin slider-item-border(
+  $bg-color: unset,
+  $border: unset,
+  $border-radius: unset
+) {
+  background-color: $bg-color;
+  border: $border;
+  border-radius: $border-radius;
+}
 
 //   @mixin audioUrl($url) {
 //     background-image: url($url);
@@ -12,12 +22,4 @@
 
 //   @mixin gradient($color1, $color2, $color3) {
 //     background: linear-gradient(90deg, $color1 0%, $color2 45%, $color3 100%);
-//   }
-
-//   @mixin borderRadiuses($left: unset, $right: unset) {
-//     border-top-left-radius: $left;
-//     border-bottom-left-radius: $left;
-
-//     border-top-right-radius: $right;
-//     border-bottom-right-radius: $right;
 //   }

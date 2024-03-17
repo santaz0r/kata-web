@@ -1,6 +1,6 @@
 .subtitle {
-  display: flex;
-  justify-content: space-between;
+  @include flex($justify: space-between);
+
   &::before {
     content: "";
     position: absolute;
