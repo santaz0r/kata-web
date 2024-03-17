@@ -1,0 +1,28 @@
+.brands-slider {
+  padding: 0 0 42px;
+  margin-bottom: 24px;
+  @media (min-width: 768px) {
+    padding: 0;
+  }
+  &__item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 72px;
+    background-color: #fff;
+    border: 1px solid #eaeaea;
+    border-radius: 6px;
+    padding: 0 16px;
+    span {
+      background-image: url("../../../assets/icons/dropdown.svg");
+      background-repeat: no-repeat;
+      background-position: 50% 50%;
+      font-size: 24px;
+      color: red;
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      border: 2px solid #ff3e79;
+    }
+  }
+}

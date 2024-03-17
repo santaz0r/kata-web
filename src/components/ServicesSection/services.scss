@@ -1,0 +1,36 @@
+.services {
+  min-width: 0;
+
+  &__title {
+    padding: 16px;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 150%;
+    letter-spacing: -0.01em;
+    text-transform: uppercase;
+    color: $services-title-color;
+    background: linear-gradient(270deg, #fff 0%, #f8f8f8 100%);
+    margin-bottom: 16px;
+  }
+
+  &__accordion {
+    display: none;
+
+    img {
+      transition: transform 0.3s linear;
+    }
+    &.opened {
+      img {
+        transition: transform 0.3s linear;
+        transform: rotate(180deg);
+      }
+    }
+
+    @media (min-width: 768px) {
+      display: flex;
+    }
+    @media (min-width: 1520px) {
+      display: none;
+    }
+  }
+}

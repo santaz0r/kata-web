@@ -12,7 +12,7 @@ const InfoSection = () => {
   const infoElement = htmlToElement(InfoHTML);
   const infoElementContainer = infoElement.querySelector(".container");
   const infoDescription = infoElement.querySelector(".description__item");
-  console.log(infoDescription);
+
   const accordion = Accordion({
     className: "info__accordion",
     text: "Читать далее",

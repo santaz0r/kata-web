@@ -1,0 +1,30 @@
+.swiper-pagination {
+  position: static;
+}
+
+.swiper-pagination-bullet {
+  background-color: #979797;
+  width: 12px;
+  height: 12px;
+}
+
+.brands-grid {
+  &__wrapper {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, 220px);
+    grid-template-rows: repeat(auto-fit, 72px);
+    height: 168px;
+    overflow-y: hidden;
+    gap: 16px 24px;
+
+    transition: height 0.3s linear;
+    &.opened {
+      @media (min-width: 768px) {
+        height: 344px;
+      }
+      @media (min-width: 1120px) {
+        height: 250px;
+      }
+    }
+  }
+}
