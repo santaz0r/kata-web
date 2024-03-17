@@ -4,6 +4,7 @@ import Accordion from "../Accordion";
 import SwiperTempalte from "../SwiperSlider";
 
 import BrandsTemplate from "../SwiperTemplates/BrandsTemplate";
+import TypesTemplate from "../SwiperTemplates/TypesTemplate";
 import ServicesHTML from "./index.html";
 
 import "./services.scss";
@@ -11,14 +12,23 @@ import "./services.scss";
 const ServicesSection = () => {
   const element = htmlToElement(ServicesHTML);
 
-  const h3Element = document.createElement("h3");
-  h3Element.className = "services__title";
-  h3Element.textContent = "Ремонт техники различных брендов";
+  const h3Brands = document.createElement("h3");
+  h3Brands.className = "services__title";
+  h3Brands.textContent = "Ремонт техники различных брендов";
 
-  element.append(h3Element);
+  const h3Types = document.createElement("h3");
+  h3Types.className = "services__title";
+  h3Types.textContent = "Ремонт различных видов техники";
 
-  const accordion = Accordion({
+  const brandsAccordion = Accordion({
     className: "services__accordion",
+    text: "Показать все",
+    imgPath: icons.expand,
+    alt: "expand",
+  });
+
+  const typesAccordion = Accordion({
+    className: "types__accordion",
     text: "Показать все",
     imgPath: icons.expand,
     alt: "expand",
@@ -28,10 +38,17 @@ const ServicesSection = () => {
     swiperClass: "brands-slider",
     paginationClass: "brands-slider__pagination",
     template: BrandsTemplate(),
-    accordion: accordion,
+    accordion: brandsAccordion,
   });
 
-  element.append(brandsSwiper);
+  const typesSwiper = SwiperTempalte({
+    swiperClass: "types-slider",
+    paginationClass: "types-slider__pagination",
+    template: TypesTemplate(),
+    accordion: typesAccordion,
+  });
+
+  element.append(h3Brands, brandsSwiper, h3Types, typesSwiper);
 
   return element;
 };

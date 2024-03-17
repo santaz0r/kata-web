@@ -1,5 +1,6 @@
 .swiper-pagination {
   position: static;
+  margin-bottom: 24px;
 }
 
 .swiper-pagination-bullet {
@@ -16,7 +17,7 @@
     height: 168px;
     overflow-y: hidden;
     gap: 16px 24px;
-
+    justify-content: center;
     transition: height 0.3s linear;
     &.opened {
       @media (min-width: 768px) {
@@ -24,6 +25,27 @@
       }
       @media (min-width: 1120px) {
         height: 250px;
+      }
+    }
+  }
+}
+
+.types-grid {
+  &__wrapper {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, 224px);
+    grid-template-rows: repeat(auto-fit, 160px);
+    height: 168px;
+    overflow-y: hidden;
+    gap: 24px;
+    justify-content: center;
+    transition: height 0.3s linear;
+    &.opened {
+      @media (min-width: 768px) {
+        height: 550px;
+      }
+      @media (min-width: 1120px) {
+        height: 380px;
       }
     }
   }

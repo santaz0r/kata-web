@@ -1,0 +1,44 @@
+.types-slider {
+  padding: 0 0 42px;
+  margin-bottom: 24px;
+
+  font-size: 16px;
+  line-height: 150%;
+  letter-spacing: -0.01em;
+
+  &__item {
+    width: 240px;
+    min-height: 160px;
+    display: flex;
+    justify-content: space-between;
+    height: 72px;
+    background-color: #fff;
+    border: 1px solid #eaeaea;
+    border-radius: 6px;
+    padding: 16px;
+    div {
+      align-self: flex-start;
+      font-family: "TT Lakes Medium";
+    }
+    span {
+      background-image: url("../../../assets/icons/dropdown.svg");
+      background-repeat: no-repeat;
+      background-position: 50% 50%;
+      align-self: flex-end;
+      font-size: 24px;
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      border: 2px solid #ff3e79;
+    }
+    @media (min-width: 768px) {
+      width: 224px;
+    }
+  }
+}
+
+.types__accordion {
+  @media (min-width: 1520px) {
+    display: flex;
+  }
+}
