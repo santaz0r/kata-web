@@ -23,7 +23,7 @@
       @media (min-width: 768px) {
         height: 344px;
       }
-      @media (min-width: 1120px) {
+      @media (min-width: 1024px) {
         height: 250px;
       }
     }
@@ -48,5 +48,13 @@
         height: 380px;
       }
     }
+  }
+}
+
+.prices-grid {
+  &__wrapper {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 54px repeat(5, 70px);
   }
 }

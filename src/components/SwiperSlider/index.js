@@ -10,7 +10,7 @@ const SwiperTempalte = ({
   swiperClass,
   paginationClass,
   template,
-  accordion,
+  accordion = "",
 }) => {
   const element = htmlToElement(swiperHTML);
   const swiper = element.querySelector(".swiper");

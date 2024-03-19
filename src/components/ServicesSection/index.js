@@ -4,6 +4,7 @@ import Accordion from "../Accordion";
 import SwiperTempalte from "../SwiperSlider";
 
 import BrandsTemplate from "../SwiperTemplates/BrandsTemplate";
+import PricesTemplate from "../SwiperTemplates/PriceTemplates";
 import TypesTemplate from "../SwiperTemplates/TypesTemplate";
 import ServicesHTML from "./index.html";
 
@@ -19,6 +20,10 @@ const ServicesSection = () => {
   const h3Types = document.createElement("h3");
   h3Types.className = "services__title";
   h3Types.textContent = "Ремонт различных видов техники";
+
+  const h3Prices = document.createElement("h3");
+  h3Prices.className = "services__title";
+  h3Prices.textContent = "Цены на услуги";
 
   const brandsAccordion = Accordion({
     className: "services__accordion",
@@ -48,7 +53,20 @@ const ServicesSection = () => {
     accordion: typesAccordion,
   });
 
-  element.append(h3Brands, brandsSwiper, h3Types, typesSwiper);
+  const pricesSwiper = SwiperTempalte({
+    swiperClass: "prices-slider",
+    paginationClass: "prices-slider__pagination",
+    template: PricesTemplate(),
+  });
+
+  element.append(
+    h3Brands,
+    brandsSwiper,
+    h3Types,
+    typesSwiper,
+    h3Prices,
+    pricesSwiper
+  );
 
   return element;
 };
