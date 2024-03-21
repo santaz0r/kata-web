@@ -59,7 +59,7 @@ const ServicesSection = () => {
     template: PricesTemplate(),
   });
 
-  element.append(
+  element.prepend(
     h3Brands,
     brandsSwiper,
     h3Types,

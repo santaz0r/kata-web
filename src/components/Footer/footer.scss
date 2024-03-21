@@ -1,36 +1,28 @@
 .footer {
   width: 100%;
   min-height: 50px;
-  background-color: red;
-  // @include flex($align: center);
+  padding: 16px 0 20px;
+  border-top: 1px solid $highlight-line;
+  font-family: "TT Lakes Medium";
+  font-size: 14px;
+  line-height: 114%;
+  text-align: center;
+  color: $footer-color;
+  opacity: 0.72;
+
   &__wrapper {
     height: 100%;
-    //   @include flex($justify: space-between, $align: center);
+    @include flex($justify: center, $align: center);
+
+    flex-direction: column;
   }
 
-  &__gh-logo {
-    //   @extend %logos;
-
-    text-decoration: none;
-    color: black;
-    font-weight: 500;
-    position: relative;
-    transition: all 0.3s;
-
-    &:hover {
-      scale: 1.1;
-    }
-  }
   &__year {
-    font-weight: 500;
-    user-select: none;
+    @include flex($justify: center, $align: center);
+    flex-direction: column;
+    margin-bottom: 16px;
   }
-  &__rss-logo {
-    width: 100px;
-
-    transition: all 0.3s;
-    &:hover {
-      scale: 1.1;
-    }
+  &__conf {
+    margin-bottom: 16px;
   }
 }

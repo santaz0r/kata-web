@@ -13,5 +13,6 @@ const servicesSection = ServicesSection();
 page.prepend(header);
 page.append(infoSection);
 page.append(servicesSection);
+page.append(footer);
 
 InitSwipers();

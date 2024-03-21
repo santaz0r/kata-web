@@ -21,7 +21,6 @@ const SwiperTempalte = ({
 
   swiper.append(template, accordion);
 
-  console.log(element);
   return element;
 };
 
