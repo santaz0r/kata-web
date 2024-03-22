@@ -3,7 +3,7 @@ import ButtonHTML from "./index.html";
 
 import "./button.scss";
 
-const Button = ({ imgPath, className, text, alt }) => {
+const Button = ({ imgPath, className, text, alt, onClick }) => {
   const buttonElement = htmlToElement(ButtonHTML);
   buttonElement.classList.add(className);
 
@@ -16,6 +16,7 @@ const Button = ({ imgPath, className, text, alt }) => {
   spanEl.textContent = text;
   btnImg.append(ImgEl);
   buttonElement.append(spanEl);
+  if (onClick) buttonElement.addEventListener("click", onClick);
 
   return buttonElement;
 };

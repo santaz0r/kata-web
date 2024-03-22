@@ -6,6 +6,7 @@ import repair from "./icons/repair.svg";
 import check from "./icons/check-icon.svg";
 import dropDown from "./icons/dropdown.svg";
 import expand from "./icons/expand.svg";
+import cross from "./icons/cross-icon.svg";
 
 import lenovo from "./icons/lenovo.svg";
 import samsung from "./icons/samsung.svg";
@@ -33,6 +34,7 @@ const icons = {
   acer,
   viewsonic,
   sony,
+  cross,
 };
 
 export default icons;
