@@ -1,8 +1,5 @@
 import htmlToElement from "../../utils/htmlToElement";
 import swiperHTML from "./index.html";
-import Swiper from "swiper";
-
-import { Pagination } from "swiper/modules";
 
 import "./swiper.scss";
 

@@ -1,23 +1,18 @@
-import htmlToElement from "../../utils/htmlToElement";
-import Header from "./index.html";
-import Button from "../Button";
 import icons from "../../assets";
-import Logo from "../Logo";
 import renderFeedback from "../../js/renderFeedback";
-
-import "./header.scss";
-import TextField from "../Form/TextField";
+import htmlToElement from "../../utils/htmlToElement";
 import toggleOverlay from "../../utils/toggleOverlay";
+import Button from "../Button";
+import TextField from "../Form/TextField";
+import MenuHTML from "./index.html";
 
-const HeaderEl = () => {
-  const header = htmlToElement(Header);
-  const headerWrapper = header.querySelector(".header__wrapper");
+import "./menu.scss";
 
-  for (let i = 0; i < 3; i++) {
-    const headerItemEl = document.createElement("div");
-    headerItemEl.className = "header__item";
-    headerWrapper.append(headerItemEl);
-  }
+const Menu = () => {
+  const element = htmlToElement(MenuHTML);
+  const menuWrapper = element.querySelector(".menu__wrapper");
+  const closeBtn = element.querySelectorAll(".menu__button")[0];
+  const footerBtnsWrapper = element.querySelectorAll(".menu__item")[2];
 
   const inputName = TextField({
     placeholder: "Имя",
@@ -47,6 +42,8 @@ const HeaderEl = () => {
       title: "Заказать звонок",
       inputs: [inputName, inputPhone, inputEmail, inputMessage],
     });
+
+    toggleClassMenu();
   };
 
   const handleClickPhone = () => {
@@ -56,22 +53,19 @@ const HeaderEl = () => {
       title: "Заказать звонок",
       inputs: [inputPhoneSecond],
     });
+
+    toggleClassMenu();
   };
 
-  const openMenu = () => {
-    const menu = document.querySelector(".menu");
-    menu.classList.toggle("opened");
+  const toggleClassMenu = () => {
+    element.classList.toggle("opened");
   };
 
-  const headerItem = headerWrapper.querySelectorAll(".header__item");
-
-  const burgerIconBtn = Button({
-    imgPath: icons.burger,
-    className: "header__button",
-    alt: "burger-icon",
-    text: "",
-    onClick: openMenu,
-  });
+  const removeOverlay = (e) => {
+    const { target } = e;
+    const menuContainer = target.closest(".menu__wrapper");
+    if (!menuContainer) element.classList.remove("opened");
+  };
 
   const phoneBtn = Button({
     imgPath: icons.phone,
@@ -89,30 +83,19 @@ const HeaderEl = () => {
     onClick: handleClickPhone,
   });
 
-  const repairBtn = Button({
+  const profileBtn = Button({
     imgPath: icons.repair,
     className: "header__button",
     alt: "repair-icon",
     text: "",
   });
 
-  const checkBtn = Button({
-    imgPath: icons.check,
-    className: "header__button",
-    alt: "check-icon",
-    text: "",
-  });
+  menuWrapper.parentElement.addEventListener("click", removeOverlay);
+  closeBtn.addEventListener("click", toggleClassMenu);
 
-  const logo = Logo({ className: "header__logo", imgPath: icons.logo });
+  footerBtnsWrapper.append(phoneBtn, messageBtn, profileBtn);
 
-  const btnsWrapper = document.createElement("div");
-  btnsWrapper.append(phoneBtn, messageBtn);
-  btnsWrapper.className = "buttons__wrapper";
-
-  headerItem[0].append(burgerIconBtn);
-  headerItem[1].append(logo, btnsWrapper);
-  headerItem[2].append(repairBtn, checkBtn);
-  return header;
+  return element;
 };
 
-export default HeaderEl();
+export default Menu;

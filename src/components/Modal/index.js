@@ -16,6 +16,12 @@ const Modal = ({ title }) => {
     element.classList.toggle("opened");
   };
 
+  const removeOverlay = (e) => {
+    const { target } = e;
+    const modalContainer = target.closest(".modal__wrapper");
+    if (!modalContainer) element.classList.remove("opened");
+  };
+
   const modalClose = Button({
     alt: "close",
     className: "modal__close",
@@ -24,6 +30,7 @@ const Modal = ({ title }) => {
     onClick: handleClose,
   });
 
+  wrapper.parentElement.addEventListener("click", removeOverlay);
   wrapper.append(modalClose, modalTitle);
 
   return element;

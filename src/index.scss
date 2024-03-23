@@ -33,6 +33,12 @@ html {
   color: $text-color;
   position: relative;
   background-color: $bg-main-color;
+
+  &__wrapper {
+    @media (min-width: 1440px) {
+      display: flex;
+    }
+  }
 }
 
 .container {
@@ -46,10 +52,6 @@ html {
   @media (min-width: 1120px) {
     max-width: 95%;
   }
-}
-
-.main {
-  flex: 1 0 auto;
 }
 
 .hidden {
