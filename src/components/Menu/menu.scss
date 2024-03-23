@@ -8,7 +8,7 @@
 
   background-color: rgba(#fff, $alpha: 0.96);
   transition: left 0.3s ease;
-  @media (min-width: 1440px) {
+  @media (min-width: 1120px) {
     position: static;
     width: unset;
   }
@@ -22,7 +22,7 @@
     background: #fff;
     box-shadow: 16px 0 52px 0 rgba(14, 24, 80, 0.2),
       -2px 0 4px 0 rgba(69, 79, 126, 0.02);
-    @media (min-width: 1440px) {
+    @media (min-width: 1120px) {
       box-shadow: none;
     }
   }
@@ -41,7 +41,7 @@
     #{$root}__item {
       display: flex;
       align-items: center;
-      @media (min-width: 1440px) {
+      @media (min-width: 1120px) {
         &:first-child {
           button {
             display: none;

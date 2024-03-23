@@ -22,6 +22,12 @@
     display: none;
     @media (min-width: 1120px) {
       display: flex;
+      button {
+        margin-right: 32px;
+        &:last-child {
+          margin-right: 0;
+        }
+      }
     }
   }
 

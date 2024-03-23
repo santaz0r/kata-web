@@ -35,7 +35,7 @@ html {
   background-color: $bg-main-color;
 
   &__wrapper {
-    @media (min-width: 1440px) {
+    @media (min-width: 1120px) {
       display: flex;
     }
   }
