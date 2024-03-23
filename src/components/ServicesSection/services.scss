@@ -1,0 +1,41 @@
+.services {
+  min-width: 0;
+  margin-bottom: 40px;
+
+  &__title {
+    padding: 16px;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 150%;
+    letter-spacing: -0.01em;
+    text-transform: uppercase;
+    color: $text-gray;
+    border-top: 1px solid $highlight-line;
+    background: linear-gradient(270deg, #fff 0%, $bg-main-color 100%);
+    margin-bottom: 16px;
+  }
+
+  &__conclusion {
+    font-size: 14px;
+    line-height: 143%;
+    letter-spacing: 0.01em;
+
+    margin-bottom: 27px;
+  }
+
+  &__offer {
+    font-weight: 600;
+    line-height: 150%;
+    letter-spacing: -0.01em;
+    position: relative;
+    &::after {
+      content: "";
+      position: absolute;
+      background-image: url("../../assets/icons/dropdown.svg");
+      background-repeat: no-repeat;
+      background-position: 50% 50%;
+      width: 24px;
+      height: 24px;
+    }
+  }
+}

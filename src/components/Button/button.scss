@@ -1,0 +1,27 @@
+.button {
+  @include flex($align: center);
+
+  padding: 0;
+  outline: none;
+  border: none;
+  cursor: pointer;
+
+  background-color: transparent;
+  background-repeat: no-repeat;
+  border-radius: 20px;
+  transition: filter 0.1s linear;
+  &:hover {
+    filter: drop-shadow(0 0 7px $button-color);
+  }
+  &__img {
+    @include flex($justify: center, $align: center);
+    width: 40px;
+    height: 40px;
+    background-color: $button-color;
+    border-radius: 50%;
+  }
+  span {
+    display: none;
+    order: -1;
+  }
+}

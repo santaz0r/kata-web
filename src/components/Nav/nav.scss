@@ -1,0 +1,37 @@
+.navigation {
+  @include flex();
+  padding-bottom: 5px;
+  list-style-type: none;
+  overflow: auto;
+  gap: 15px;
+  @media (min-width: 1120px) {
+    flex-wrap: wrap;
+  }
+
+  &__item {
+    display: inline-block;
+    min-width: max-content;
+    height: 40px;
+    padding: 8px 9px 8px 16px;
+    border: 2px solid transparent;
+    @media (min-width: 1120px) {
+      padding: 8px 22px 7px 22px;
+    }
+    a {
+      text-decoration: none;
+      color: $text-gray;
+    }
+    &--active {
+      border: 2px solid $nav-active;
+      background-color: $bg-li;
+      border-radius: 6px;
+    }
+    &:hover {
+      border: 2px solid $li-hover;
+      background-color: $bg-li;
+      border-radius: 6px;
+
+      box-sizing: border-box;
+    }
+  }
+}

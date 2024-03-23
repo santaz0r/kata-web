@@ -1,0 +1,160 @@
+.menu {
+  $root: &;
+  width: 100%;
+  z-index: 10;
+  position: fixed;
+  top: 0;
+  left: -140%;
+
+  background-color: rgba(#fff, $alpha: 0.96);
+  transition: left 0.3s ease;
+  @media (min-width: 1120px) {
+    position: static;
+    width: unset;
+  }
+
+  &__wrapper {
+    @include flex($justify: flex-start);
+    width: 320px;
+    padding: 18px 24px 32px;
+    flex-direction: column;
+    min-height: 100vh;
+    background: #fff;
+    box-shadow: 16px 0 52px 0 rgba(14, 24, 80, 0.2),
+      -2px 0 4px 0 rgba(69, 79, 126, 0.02);
+    @media (min-width: 1120px) {
+      box-shadow: none;
+    }
+  }
+
+  &__logo {
+    margin-left: 17px;
+  }
+
+  &__header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    margin-bottom: 45px;
+
+    #{$root}__item {
+      display: flex;
+      align-items: center;
+      @media (min-width: 1120px) {
+        &:first-child {
+          button {
+            display: none;
+          }
+        }
+      }
+    }
+  }
+
+  &__list {
+    flex: 1 0 auto;
+    margin-bottom: 8px;
+  }
+
+  &__footer {
+    display: flex;
+    flex: 1 0 auto;
+    flex-direction: column;
+    height: 200px;
+    justify-content: flex-end;
+    #{$root}__item {
+      display: flex;
+      align-items: center;
+      margin-bottom: 16px;
+      #{$root}__button {
+        margin-right: 16px;
+        &:last-child {
+          margin-right: 0;
+        }
+      }
+    }
+  }
+
+  &__email {
+    margin-bottom: 12px;
+  }
+
+  &__phone {
+    margin-bottom: 40px;
+  }
+
+  &.opened {
+    left: 0;
+  }
+}
+
+.email {
+  font-weight: 500;
+  line-height: 150%;
+  letter-spacing: -0.01em;
+}
+
+.phone {
+  font-weight: 700;
+  font-size: 24px;
+  line-height: 133%;
+  letter-spacing: -0.03em;
+}
+
+.lang {
+  display: flex;
+  &__item {
+    font-weight: 500;
+    margin-right: 7px;
+    &:last-child {
+      margin-right: 0;
+    }
+  }
+  &__item--active {
+    color: $text-gray;
+  }
+}
+
+.list {
+  height: 450px;
+  list-style-type: none;
+  padding: 0;
+
+  &__item {
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 150%;
+    letter-spacing: -0.01em;
+    margin-bottom: 32px;
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+    a {
+      color: #1b1c21;
+      text-decoration: none;
+      transition: padding-left 0.1s linear;
+      &:hover {
+        padding-left: 30px;
+      }
+    }
+  }
+
+  &__item--active {
+    position: relative;
+    &::before {
+      content: "";
+      left: -24px;
+      top: 50%;
+      transform: translateY(-50%);
+      border-radius: 0 20px 20px 0;
+      position: absolute;
+      width: 4px;
+      height: 32px;
+      background-color: $title-highlight-color;
+    }
+    a {
+      color: $text-gray;
+    }
+  }
+}

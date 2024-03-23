@@ -1,0 +1,54 @@
+.form {
+  font-family: "TT Lakes Medium";
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 114%;
+  color: $text-gray;
+
+  &__inputs {
+    @include flex();
+    flex-direction: column;
+    .my-input {
+      margin-bottom: 16px;
+    }
+    textarea {
+      height: 118px;
+      resize: none;
+    }
+  }
+
+  &__privacy {
+    span {
+      color: $text-highlight;
+      cursor: pointer;
+    }
+    margin-bottom: 16px;
+  }
+  &__button {
+    @include flex($justify: center, $align: center);
+    margin-left: auto;
+    font-family: "TT Lakes Bold";
+    text-transform: uppercase;
+    width: 136px;
+    height: 32px;
+    color: #fff;
+
+    background-color: $button-color;
+    font-size: 12px;
+    span {
+      display: block;
+      mask-image: url("../../assets/icons/dropdown.svg");
+      mask-repeat: no-repeat;
+      mask-position: 50% 50%;
+      background-color: #fff;
+      font-size: 24px;
+
+      width: 24px;
+      height: 24px;
+      border-radius: 50%;
+      border: unset;
+      order: 1;
+      margin-left: 8px;
+    }
+  }
+}

@@ -1,7 +1,12 @@
-import footer from "./components/Footer";
 import "./index.scss";
+import RenderMainPage from "./js/RenderMainPage";
 
+const main = document.querySelector(".main");
 const page = document.querySelector(".page");
+const pageWrapper = document.querySelector(".page__wrapper");
 
-page.append(footer);
-console.log("works!");
+RenderMainPage({
+  main,
+  page,
+  pageWrapper,
+});

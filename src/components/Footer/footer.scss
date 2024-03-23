@@ -1,36 +1,52 @@
 .footer {
   width: 100%;
   min-height: 50px;
-  background-color: red;
-  // @include flex($align: center);
+  padding: 16px 0 20px;
+  border-top: 1px solid $highlight-line;
+  font-family: "TT Lakes Medium";
+  font-size: 14px;
+  line-height: 114%;
+  text-align: center;
+  color: $text-gray;
+  opacity: 0.72;
+
   &__wrapper {
     height: 100%;
-    //   @include flex($justify: space-between, $align: center);
-  }
+    @include flex($justify: center, $align: center);
+    flex-direction: column;
 
-  &__gh-logo {
-    //   @extend %logos;
-
-    text-decoration: none;
-    color: black;
-    font-weight: 500;
-    position: relative;
-    transition: all 0.3s;
-
-    &:hover {
-      scale: 1.1;
+    @media (min-width: 768px) {
+      flex-direction: row;
+      align-items: flex-start;
+      gap: 40px;
+    }
+    @media (min-width: 1440px) {
+      gap: 150px;
     }
   }
-  &__year {
-    font-weight: 500;
-    user-select: none;
-  }
-  &__rss-logo {
-    width: 100px;
 
-    transition: all 0.3s;
-    &:hover {
-      scale: 1.1;
+  &__year {
+    @include flex($justify: center, $align: center);
+    flex-direction: column;
+    margin-bottom: 16px;
+
+    @media (min-width: 768px) {
+      flex-shrink: 0;
+      align-items: flex-start;
+    }
+  }
+  &__conf {
+    margin-bottom: 16px;
+    @media (min-width: 768px) {
+      white-space: nowrap;
+      flex-shrink: 0;
+    }
+  }
+
+  &__info {
+    @media (min-width: 768px) {
+      flex-shrink: 1;
+      text-align: right;
     }
   }
 }

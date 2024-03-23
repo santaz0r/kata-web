@@ -1,0 +1,63 @@
+.swiper-pagination {
+  position: static;
+  margin-bottom: 24px;
+}
+
+.swiper-pagination-bullet {
+  background-color: $slider-bullets;
+  width: 12px;
+  height: 12px;
+}
+
+.brands-grid {
+  &__wrapper {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, 220px);
+    grid-template-rows: repeat(auto-fit, 72px);
+    height: 168px;
+    overflow-y: hidden;
+    gap: 16px 24px;
+    justify-content: center;
+    transition: height 0.3s linear;
+    &.opened {
+      @media (min-width: 768px) {
+        height: 344px;
+      }
+      @media (min-width: 1024px) {
+        height: 250px;
+      }
+    }
+  }
+}
+
+.types-grid {
+  &__wrapper {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, 224px);
+    grid-template-rows: repeat(auto-fit, 160px);
+    height: 168px;
+    overflow-y: hidden;
+    gap: 24px;
+    justify-content: center;
+    transition: height 0.3s linear;
+    &.opened {
+      @media (min-width: 768px) {
+        height: 550px;
+      }
+      @media (min-width: 1280px) {
+        height: 380px;
+      }
+      @media (min-width: 2325px) {
+        height: 200px;
+      }
+    }
+  }
+}
+
+.prices-grid {
+  &__wrapper {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 54px repeat(5, 70px);
+  }
+}
