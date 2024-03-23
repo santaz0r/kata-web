@@ -13,16 +13,40 @@
   &__wrapper {
     height: 100%;
     @include flex($justify: center, $align: center);
-
     flex-direction: column;
+
+    @media (min-width: 768px) {
+      flex-direction: row;
+      align-items: flex-start;
+      gap: 40px;
+    }
+    @media (min-width: 1440px) {
+      gap: 150px;
+    }
   }
 
   &__year {
     @include flex($justify: center, $align: center);
     flex-direction: column;
     margin-bottom: 16px;
+
+    @media (min-width: 768px) {
+      flex-shrink: 0;
+      align-items: flex-start;
+    }
   }
   &__conf {
     margin-bottom: 16px;
+    @media (min-width: 768px) {
+      white-space: nowrap;
+      flex-shrink: 0;
+    }
+  }
+
+  &__info {
+    @media (min-width: 768px) {
+      flex-shrink: 1;
+      text-align: right;
+    }
   }
 }
