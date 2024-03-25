@@ -4,6 +4,7 @@ import modalHTML from "./index.html";
 import Button from "../Button";
 
 import "./modal.scss";
+import toggleBodyOverflow from "../../utils/toggleBodyOverflow";
 
 const Modal = ({ title }) => {
   const element = htmlToElement(modalHTML);
@@ -13,13 +14,19 @@ const Modal = ({ title }) => {
   const wrapper = element.querySelector(".modal__wrapper");
 
   const handleClose = () => {
+    document.body.style.overflow = "";
+
     element.classList.toggle("opened");
   };
 
   const removeOverlay = (e) => {
     const { target } = e;
     const modalContainer = target.closest(".modal__wrapper");
-    if (!modalContainer) element.classList.remove("opened");
+
+    if (!modalContainer) {
+      document.body.style.overflow = "";
+      element.classList.remove("opened");
+    }
   };
 
   const modalClose = Button({
