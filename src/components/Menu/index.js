@@ -1,6 +1,7 @@
 import icons from "../../assets";
 import renderFeedback from "../../js/renderFeedback";
 import htmlToElement from "../../utils/htmlToElement";
+import toggleBodyOverflow from "../../utils/toggleBodyOverflow";
 import toggleOverlay from "../../utils/toggleOverlay";
 import Button from "../Button";
 import TextField from "../Form/TextField";
@@ -44,6 +45,7 @@ const Menu = () => {
     });
 
     toggleClassMenu();
+    document.body.style.overflow = "hidden";
   };
 
   const handleClickPhone = () => {
@@ -55,16 +57,22 @@ const Menu = () => {
     });
 
     toggleClassMenu();
+    document.body.style.overflow = "hidden";
   };
 
   const toggleClassMenu = () => {
+    document.body.style.overflow = "";
+
     element.classList.toggle("opened");
   };
 
   const removeOverlay = (e) => {
     const { target } = e;
     const menuContainer = target.closest(".menu__wrapper");
-    if (!menuContainer) element.classList.remove("opened");
+    if (!menuContainer) {
+      element.classList.remove("opened");
+      document.body.style.overflow = "";
+    }
   };
 
   const phoneBtn = Button({

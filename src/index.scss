@@ -27,6 +27,7 @@ html {
 }
 
 .page {
+  max-width: 1440px;
   display: flex;
   flex-direction: column;
   min-height: 100%;
@@ -38,6 +39,9 @@ html {
     @media (min-width: 1120px) {
       display: flex;
     }
+  }
+  @media (min-width: 1440px) {
+    margin: 0 auto;
   }
 }
 

@@ -8,6 +8,7 @@ import renderFeedback from "../../js/renderFeedback";
 import "./header.scss";
 import TextField from "../Form/TextField";
 import toggleOverlay from "../../utils/toggleOverlay";
+import toggleBodyOverflow from "../../utils/toggleBodyOverflow";
 
 const HeaderEl = () => {
   const header = htmlToElement(Header);
@@ -47,6 +48,7 @@ const HeaderEl = () => {
       title: "Заказать звонок",
       inputs: [inputName, inputPhone, inputEmail, inputMessage],
     });
+    document.body.style.overflow = "hidden";
   };
 
   const handleClickPhone = () => {
@@ -56,10 +58,12 @@ const HeaderEl = () => {
       title: "Заказать звонок",
       inputs: [inputPhoneSecond],
     });
+    document.body.style.overflow = "hidden";
   };
 
   const openMenu = () => {
     const menu = document.querySelector(".menu");
+    toggleBodyOverflow();
     menu.classList.toggle("opened");
   };
 
